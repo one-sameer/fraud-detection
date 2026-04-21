@@ -1,0 +1,14 @@
+# ─── Cost parameters ───────────────────────────────────────────────────────────
+# C_FN and C_FP are intentionally left null until you decide on values.
+# Set them before running stage5_binary_threshold.py.
+# All other values are reasonable defaults you can tune.
+
+costs:
+  C_FN: 125.0          # Cost of a false negative (missed fraud). Set to e.g. 125.0 (mean fraud amount)
+  C_FP: 5.0          # Cost of a false positive (wrongly blocked legit txn). Set to e.g. 5.0
+  C_review: 2.0       # Cost of sending one transaction to human review (reviewer time proxy)
+  C_overflow: 500.0   # Penalty per percentage point above R_max in review queue
+
+review:
+  R_max: 0.03         # Max fraction of transactions that should go to human review (3%)
+  rolling_window: 100 # Number of recent transactions for rolling review-rate monitoring
