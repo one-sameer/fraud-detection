@@ -44,7 +44,7 @@ Preprocessor  (cyclical time encoding + RobustScaler for Amount)
                    ┌──────────────────────────┐
                    │  p < τ_low  → approve    │
                    │  τ_low ≤ p ≤ τ_high      │
-                   │           → human review  │
+                   │           → human review │
                    │  p > τ_high → block      │
                    └──────────────────────────┘
                               │
